@@ -1,0 +1,12 @@
+/proc/*
+/dev/*
+/sys/*
+/tmp/*
+/mnt/*
+/media/*
+/run/*
+/var/lock/*
+/var/run/*
+/var/lib/pacman/*
+/var/cache/pacman/pkg/*
+/lost+found
