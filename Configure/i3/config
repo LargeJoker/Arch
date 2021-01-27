@@ -6,7 +6,7 @@ exec --no-startup-id compton&
 exec variety
 exec albert
 exec_always feh --bg-scale /home/joker/.config/i3/backGround/joker_2.jpg
-exec_always xrandr --output eDP-1 --auto --right-of HDMI-1
+exec_always xrandr --output eDP1 --auto --right-of HDMI1-0
 exec_always xmodmap /home/joker/.xmodmaprc
 #exec_always /home/joker/.config/i3/polybar.sh
 
@@ -168,17 +168,17 @@ bindsym $mod+Shift+t exec --no-startup-id alacritty -e ranger
 bindsym --whole-window $mod+button9 kill
 
 #*****************mode*************bar
-#bar{
-#	position top
-#	status_command i3status --config ~/.config/i3/i3status.conf
-#}
-
-
-
-
-
+bar{
+	position top
+	status_command i3status --config ~/.config/i3/i3status.conf
+}
 
 #******************************mode
+#1. check the configure file
+#2. resize window
+#3. open the software
+
+
 # configure file
 mode "config" {
     bindsym v exec --no-startup-id alacritty -e vim /home/joker/.vim/vimrc
@@ -206,9 +206,10 @@ mode "resize" {
 	bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
+# open the software
 mode "mySoftware" {
 
-	bindsym f exec --no-startup-id firefox;
+	bindsym c exec --no-startup-id chromium
 	bindsym v exec --no-startup-id virtualbox
 	bindsym l exec --no-startup-id libreoffice
 	bindsym s exec --no-startup-id stm32cubemx
@@ -216,10 +217,6 @@ mode "mySoftware" {
 	bindsym g exec --no-startup-id goldendict
 	bindsym b exec --no-startup-id blueman-manager
 	bindsym t exec --no-startup-id thunar
-
-	bindsym y exec --no-startup-id firefox --new-window http://fanyi.youdao.com/
-	bindsym a exec --no-startup-id firefox --new-window https://www.archlinux.org/
-
 
 	# back to normal: Enter or Escape or $mod+r
 	bindsym Return mode "default"
